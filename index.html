@@ -1,270 +1,235 @@
+<!-- ========== LOGO HEADER ========== -->
+<header class="fixed top-0 left-0 w-full z-50 px-6 py-4">
+  <img 
+    src="logo.png" 
+    alt="Lime Glitch Logo"
+    class="h-10 md:h-12 opacity-90 hover:opacity-100 transition"
+  >
+</header>
+
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lime Glitch -- مبرمج ومطور ويب</title>
-  <link rel="icon" href="https://i.postimg.cc/nrjB3mjQ/FB-IMG-1755999357119.jpg" />
+  <meta charset="UTF-8">
+  <title>Lime Glitch Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
   <style>
-    /* تحسين الخط العربي */
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap');
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Cairo', system-ui, -apple-system, Tahoma, sans-serif; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .ar { font-family: 'Cairo', sans-serif; direction: rtl; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Header -->
-  <header class="bg-white/90 backdrop-blur shadow-sm fixed top-0 w-full z-50 border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="h-16 flex items-center justify-between">
-        <a href="#home" class="flex items-center gap-3">
-          <img src="https://i.postimg.cc/nrjB3mjQ/FB-IMG-1755999357119.jpg" alt="Lime Glitch Logo" class="h-10 w-10 rounded-full ring-1 ring-gray-200" />
-          <span class="text-xl font-extrabold text-gray-900">Lime Glitch</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-          <a href="#home" class="hover:text-blue-600">الرئيسية</a>
-          <a href="#about" class="hover:text-blue-600">من أنا</a>
-          <a href="#apps" class="hover:text-blue-600">تطبيقات</a>
-          <a href="#services" class="hover:text-blue-600">الخدمات</a>
-          <a href="#partners" class="hover:text-blue-600">شركاء النجاح</a>
-          <a href="#contact" class="hover:text-blue-600">تواصل</a>
-        </nav>
-        <a href="#contact" class="hidden sm:inline-flex items-center rounded-full bg-blue-600 text-white px-4 py-2 text-sm font-bold hover:bg-blue-700 transition">ابدأ مشروعك</a>
-      </div>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section id="home" class="pt-28 md:pt-32 bg-gradient-to-l from-blue-600 to-indigo-700 text-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Lime Glitch -- مبرمج ومطور ويب</h1>
-          <p class="mt-4 text-white/90 md:text-lg">أبني مواقع وتطبيقات سريعة، آمنة، وقابلة للتوسع؛ مع تركيز قوي على تجربة المستخدم والأداء ونتائج الأعمال.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#services" class="inline-flex items-center rounded-full bg-white text-blue-700 px-5 py-2 font-bold shadow hover:bg-gray-100">الخدمات</a>
-            <a href="#apps" class="inline-flex items-center rounded-full border border-white/70 px-5 py-2 font-bold hover:bg-white hover:text-blue-700">أعمال مميزة</a>
-          </div>
-          <div class="mt-8 grid grid-cols-3 gap-4 text-center">
-            <div class="bg-white/10 rounded-2xl p-4">
-              <div class="text-2xl md:text-3xl font-extrabold">+99</div>
-              <div class="text-white/80 text-sm">عميل سعيد</div>
-            </div>
-            <div class="bg-white/10 rounded-2xl p-4">
-              <div class="text-2xl md:text-3xl font-extrabold">+13</div>
-              <div class="text-white/80 text-sm">مشروع ناجح</div>
-            </div>
-            <div class="bg-white/10 rounded-2xl p-4">
-              <div class="text-2xl md:text-3xl font-extrabold">2016</div>
-              <div class="text-white/80 text-sm">بداية الرحلة</div>
-            </div>
-          </div>
-        </div>
-        <div class="relative">
-          <div class="aspect-video rounded-3xl bg-white/10 border border-white/20 shadow-2xl"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<body class="bg-black text-white overflow-x-hidden">
 
-  <!-- About / Story (اهري فوق) -->
-  <section id="about" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-10 items-start">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">من أنا -- قصة شغف تتحول لنتائج</h2>
-          <p class="mt-4 text-gray-600 leading-8">
-            اسمي <strong>Lime Glitch</strong>؛ بدأت كمهووس بالتقنية أحب أفكك أي منتج رقمي وأعيد بناءه بأفضل صورة ممكنة.
-            على مدار سنوات، دمجت بين التصميم المتمحور حول الإنسان، والهندسة البرمجية عالية الجودة، وممارسات DevOps الحديثة؛ عشان أطلع حلول
-            بتبدأ من فهم المشكلة بعمق وتنتهي بنتيجة ملموسة: زي زيادة المبيعات، تقليل تكلفة التشغيل، أو تسريع رحلة المستخدم.
-          </p>
-          <p class="mt-4 text-gray-600 leading-8">
-            بشتغل بمنهجية واضحة: بحث وفهم، نموذج أولي سريع، بناء تدريجي مع اختبارات، مراقبة وتحسين مستمر. ده بيخلّي المنتج دايمًا حيّ ويتطور معاك،
-            وده سر حفاظي على شراكات طويلة مع العملاء.
-          </p>
-          <ul class="mt-6 grid gap-3 text-gray-700">
-            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span> نتائج قابلة للقياس: مؤشرات أداء (KPIs) واضحة من أول يوم.</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span> أكواد نظيفة قابلة للصيانة والتوسع.</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span> دعم مستمر وتطوير ميزات وفق خطة طريق (Roadmap).</li>
-          </ul>
-        </div>
-        <div class="bg-gray-50 border border-gray-100 rounded-3xl p-6">
-          <h3 class="text-xl font-extrabold mb-3">أعمال مختارة -- تطبيقات مستعارة</h3>
-          <div class="space-y-5">
-            <div>
-              <div class="font-bold">AppNova -- منصة متاجر سحابية</div>
-              <p class="text-gray-600 leading-7 text-sm">حل جاهز للتجارة الإلكترونية يدمج إدارة المنتجات، الدفع الإلكتروني، والشحن الذكي. النتيجة: إطلاق المتجر خلال أيام بدل أسابيع، وزيادة معدل التحويل بنسبة 23% وفق حملات الاختبار.</p>
-            </div>
-            <div>
-              <div class="font-bold">SmartTrack -- تتبّع عمليات وتحمّل</div>
-              <p class="text-gray-600 leading-7 text-sm">Dashboard لحظي لسلاسل الإمداد، مع تنبيهات ذكية وتأثير مباشر على تقليل الهدر وتأخير الطلبات. تم بناؤه بواجهات تفاعلية وأمان طبقي.</p>
-            </div>
-            <div>
-              <div class="font-bold">MedixPro -- حجز عيادات وإدارة مواعيد</div>
-              <p class="text-gray-600 leading-7 text-sm">نظام مواعيد للأطباء والعيادات مع ملفات مرضى، تذكيرات، وتقارير. يدعم تعدد الفروع والصلاحيات، مع أداء سريع على الأجهزة الضعيفة.</p>
-            </div>
-            <div>
-              <div class="font-bold">Marketly -- حملات تسويق مؤتمتة</div>
-              <p class="text-gray-600 leading-7 text-sm">أداة جدولة ونشر ومتابعة نتائج عبر قنوات متعددة. تساعد الشركات الناشئة تطلع بأول 1000 مستخدم نشط بأقل تكلفة اكتساب ممكنة.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ================= HERO ================= -->
+<section class="panel relative h-screen overflow-hidden">
+  <video src="hero.mp4" autoplay muted loop playsinline
+    class="absolute inset-0 w-full h-full object-cover scale-110"></video>
+  <div class="absolute inset-0 bg-black/70"></div>
 
-  <!-- Apps (تفاصيل أكثر) -->
-  <section id="apps" class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 text-center">تطبيقات مميّزة</h2>
-      <p class="mt-3 text-center text-gray-600 max-w-3xl mx-auto">نماذج توضح الأسلوب، الجودة، وطريقة التفكير المنتجية؛ أسماء مستعارة لأغراض العرض.</p>
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <article class="bg-white rounded-3xl shadow border border-gray-100 overflow-hidden">
-          <img src="https://i.postimg.cc/5XrDLrkr/file-000000002950620a89cffb8ec9680a42.png" alt="AppNova" class="w-full h-44 object-cover" />
-          <div class="p-6">
-            <h3 class="font-extrabold">AppNova</h3>
-            <p class="mt-2 text-sm leading-7 text-gray-600">متاجر سحابية جاهزة مع بوابات دفع وتكاملات شحن، تدعم قوالب متعددة ولغات RTL/LTR.</p>
-            <ul class="mt-3 text-sm text-gray-700 space-y-1">
-              <li>⚡ أداء Lighthouse +90</li>
-              <li>🔒 صلاحيات ولوحات تحكم متعددة</li>
-              <li>🧩 إضافات جاهزة (كوبونات/قوائم بريدية)</li>
-            </ul>
-          </div>
-        </article>
-        <!-- Card 2 -->
-        <article class="bg-white rounded-3xl shadow border border-gray-100 overflow-hidden">
-          <img src="https://i.postimg.cc/hXvHJnMx/file-00000000ac64620abe45380d5b9723b5.png" alt="SmartTrack" class="w-full h-44 object-cover" />
-          <div class="p-6">
-            <h3 class="font-extrabold">SmartTrack</h3>
-            <p class="mt-2 text-sm leading-7 text-gray-600">لوحة متابعة فورية للعمليات وسير العمل مع تنبيهات ذكية وتقارير دورية.</p>
-            <ul class="mt-3 text-sm text-gray-700 space-y-1">
-              <li>📊 رسوم بيانية تفاعلية</li>
-              <li>📦 تكامل مع أنظمة ERP</li>
-              <li>🔁 مزامنة فورية WebSockets</li>
-            </ul>
-          </div>
-        </article>
-        <!-- Card 3 -->
-        <article class="bg-white rounded-3xl shadow border border-gray-100 overflow-hidden">
-          <img src="https://i.postimg.cc/ftnFg9sj/file-00000000d3e4620abfeb7e542de62d54.png" alt="MedixPro" class="w-full h-44 object-cover" />
-          <div class="p-6">
-            <h3 class="font-extrabold">MedixPro</h3>
-            <p class="mt-2 text-sm leading-7 text-gray-600">حجوزات عيادات، ملفات مرضى، وإشعارات تذكير للزيارات مع لوحة للطبيب والموظف.</p>
-            <ul class="mt-3 text-sm text-gray-700 space-y-1">
-              <li>🗓️ تقويم مواعيد متقدم</li>
-              <li>👥 صلاحيات متدرجة</li>
-              <li>📱 واجهة خفيفة للموبايل</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services (مفصلة) -->
-  <section id="services" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 text-center">الخدمات</h2>
-      <p class="mt-3 text-center text-gray-600 max-w-3xl mx-auto">خطة تنفيذ واضحة، مواعيد تسليم دقيقة، وضمان جودة على كل خطوة من الفكرة للإطلاق.</p>
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-50 rounded-3xl p-6 border border-gray-100">
-          <h3 class="font-extrabold">تطوير مواقع ويب</h3>
-          <p class="mt-2 text-sm text-gray-600 leading-7">تصميم وتطوير مواقع سريعة، آمنة، ومتجاوبة؛ متوافقة مع تحسين محركات البحث ومقاييس الأداء.</p>
-          <ul class="mt-3 text-sm text-gray-700 space-y-1">
-            <li>⚙️ Next.js / React / Tailwind</li>
-            <li>🚀 تحسين السرعة وCore Web Vitals</li>
-            <li>🌐 دعم لغات متعددة وRTL</li>
-          </ul>
-        </div>
-        <div class="bg-gray-50 rounded-3xl p-6 border border-gray-100">
-          <h3 class="font-extrabold">تطبيقات موبايل</h3>
-          <p class="mt-2 text-sm text-gray-600 leading-7">تطبيقات هجينة وأصلية بواجهات عصرية وأداء ثابت، مع نشر للمتاجر ودعم مستمر.</p>
-          <ul class="mt-3 text-sm text-gray-700 space-y-1">
-            <li>📱 Flutter / React Native</li>
-            <li>🔔 إشعارات فورية وتتبّع أعطال</li>
-            <li>🧪 اختبارات جودة وتحديثات OTA</li>
-          </ul>
-        </div>
-        <div class="bg-gray-50 rounded-3xl p-6 border border-gray-100">
-          <h3 class="font-extrabold">استشارات وتقنيات</h3>
-          <p class="mt-2 text-sm text-gray-600 leading-7">تقييم منتجك الحالي، وضع خارطة طريق، وتحسين البنية والأمان مع تشغيل آلي للنشر.</p>
-          <ul class="mt-3 text-sm text-gray-700 space-y-1">
-            <li>☁️ بنية سحابية وCI/CD</li>
-            <li>🔒 أمن معلومات ومراجعة شيفرة</li>
-            <li>📈 تتبّع وتحليلات استخدام</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Partners (اللوجوهات تبقى تحت) -->
-  <section id="partners" class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 text-center">شركاء النجاح</h2>
-      <p class="mt-3 text-center text-gray-600 max-w-2xl mx-auto">شبكة عملاء وتعاونات ممتدة؛ عيّنة من الشعارات التي تعكس تنوّع المجالات.</p>
-      <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-        <img src="https://i.postimg.cc/jwZpW1HL/1000202902.png" alt="partner" class="mx-auto h-16 object-contain" />
-        <img src="https://i.postimg.cc/06dRvjrG/1000202903.png" alt="partner" class="mx-auto h-16 object-contain" />
-        <img src="https://i.postimg.cc/MnBJsdSF/1000202904.png" alt="partner" class="mx-auto h-16 object-contain" />
-    
-        <img src="https://i.postimg.cc/CzXVH9W8/1000202908-1.png" alt="partner" class="mx-auto h-16 object-contain" />
-        <img src="https://i.postimg.cc/FdrtHvJM/1000202910.png" alt="partner" class="mx-auto h-16 object-contain" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 text-center">تواصل معنا</h2>
-      <p class="mt-3 text-center text-gray-600 max-w-2xl mx-auto">
-        اختر الطريقة المناسبة وتواصل معي لبدء مشروعك أو الاستفسار.
-      </p>
-
-      <div class="mt-10 grid md:grid-cols-2 gap-10">
-        <!-- بيانات -->
-        <div>
-          <ul class="space-y-3 text-lg text-gray-700">
-            <li><strong>📍 العنوان:</strong> القاهرة، مصر</li>
-            <li><strong>📞 الهاتف:</strong> 
-              <a href="tel:+201551659001" class="text-blue-700 font-bold">+201551659001</a>
-            </li>
-            <li><strong>✉️ البريد:</strong> 
-              <a href="mailto:limeglitch1@gmail.com" class="text-blue-700 font-bold">limeglitch1@gmail.com</a>
-            </li>
-          </ul>
-
-          <!-- أزرار السوشيال -->
-          <div class="mt-6 flex flex-wrap gap-3 text-sm font-bold">
-            <a href="#" class="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">Facebook</a>
-            <a href="#" class="px-4 py-2 rounded-full bg-pink-500 text-white hover:bg-pink-600">Instagram</a>
-            <a href="#" class="px-4 py-2 rounded-full bg-sky-400 text-white hover:bg-sky-500">Telegram</a>
-            <a href="#" class="px-4 py-2 rounded-full bg-black text-white hover:bg-gray-800">TikTok</a>
-            <a href="#" class="px-4 py-2 rounded-full bg-red-600 text-white hover:bg-red-700">YouTube</a>
-          </div>
-        </div>
-
-        <!-- فورم -->
-        <form class="bg-gray-50 border border-gray-100 rounded-3xl p-6 grid gap-4">
-          <input type="text" placeholder="الاسم" class="w-full rounded-xl border-gray-200 focus:border-blue-600 focus:ring-blue-600" required>
-          <input type="email" placeholder="البريد الإلكتروني" class="w-full rounded-xl border-gray-200 focus:border-blue-600 focus:ring-blue-600" required>
-          <textarea placeholder="رسالتك" rows="5" class="w-full rounded-xl border-gray-200 focus:border-blue-600 focus:ring-blue-600" required></textarea>
-          <button type="submit" class="rounded-xl bg-blue-600 text-white px-6 py-3 font-extrabold hover:bg-blue-700">إرسال</button>
-        </form>
-      </div>
-    </div> 
-    <p style="font-size:10px; color:#888; text-align:center; margin-top:20px;">
-من أعمالي
+  <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight">
+      Lime Glitch Marketing
+    </h1>
+    <p class="mt-4 text-lg opacity-80">
+      We don’t chase attention. We design it.
     </p>
-              </section>
-  <!-- Footer: حقوق الطبع والنشر -->
-<footer class="bg-white border-t border-gray-100">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-gray-600">
-    <p>© <span dir="ltr">2023/05/05</span> لايم جليتش — جميع الحقوق محفوظة.</p>
+
+    <button onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})"
+      class="mt-12 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition">
+      <span class="font-bold">START</span>
+      <span class="text-3xl animate-bounce">↓</span>
+    </button>
   </div>
-</footer>
+</section>
+
+<!-- ========== SECTION TEMPLATE ========= -->
+<!-- كل سيكشن: حركة + فكرة -->
+
+<section id="s1" class="panel min-h-screen grid md:grid-cols-2 gap-12 items-center px-6 md:px-20">
+  <div>
+    <h2 class="text-3xl font-black">Marketing is not ads</h2>
+    <p class="mt-4 opacity-70">
+      Ads without strategy are just noise.
+    </p>
+
+    <div class="ar mt-6 leading-8">
+      التسويق مش بوست ولا إعلان.  
+      التسويق قرار بيتاخد قبل ما أي حاجة تتنشر.
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <div class="phone">
+      <video src="v1.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
+
+<section class="panel min-h-screen grid md:grid-cols-2 gap-12 items-center px-6 md:px-20">
+  <div>
+    <h2 class="text-3xl font-black">Positioning first</h2>
+    <p class="mt-4 opacity-70">
+      If people don’t get you, they won’t buy.
+    </p>
+
+    <div class="ar mt-6">
+      بنحدد مكانك في السوق  
+      قبل ما نطلع صوتك.
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <div class="phone">
+      <video src="v2.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
+
+<section class="panel min-h-screen grid md:grid-cols-2 gap-12 items-center px-6 md:px-20">
+  <div>
+    <h2 class="text-3xl font-black">Content that converts</h2>
+    <p class="mt-4 opacity-70">
+      Pretty content doesn’t pay bills.
+    </p>
+
+    <div class="ar mt-6">
+      بنعمل محتوى ليه هدف  
+      مش محتوى وخلاص.
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <div class="phone">
+      <video src="v3.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT YOU ================= -->
+<section class="panel min-h-screen flex items-center px-6 md:px-20 bg-neutral-900">
+  <div class="max-w-4xl">
+    <h2 class="text-4xl font-black mb-6">
+      Who am I?
+    </h2>
+
+    <p class="opacity-70 mb-6">
+      I’m not a marketer who learned code.  
+      I’m a builder who understands attention.
+    </p>
+
+    <div class="ar leading-9 text-lg">
+      أنا مؤسس لايم جليتش.  
+      بشتغل على التسويق كـ سيستم، مش حركات.  
+      بدأت من الفهم، اشتغلت على التجربة،  
+      وهدفي دايمًا إن البراند يبيع بثقة  
+      مش يصرخ عشان يتشاف.
+    </div>
+  </div>
+</section>
+
+<section class="panel min-h-screen grid md:grid-cols-2 gap-12 items-center px-6 md:px-20">
+  <div>
+    <h2 class="text-3xl font-black">Scaling brands</h2>
+    <p class="mt-4 opacity-70">
+      Long term beats shortcuts.
+    </p>
+
+    <div class="ar mt-6">
+      مش بنجري ورا ضربة حظ  
+      بنبني نمو حقيقي.
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <div class="phone">
+      <video src="v4.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
+
+<section class="panel min-h-screen grid md:grid-cols-2 gap-12 items-center px-6 md:px-20">
+  <div>
+    <h2 class="text-3xl font-black">Results over hype</h2>
+    <p class="mt-4 opacity-70">
+      Numbers tell the truth.
+    </p>
+
+    <div class="ar mt-6">
+      الإعلانات بتيجي وتروح  
+      النتيجة هي اللي بتفضل.
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <div class="phone">
+      <video src="v5.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-24 text-center bg-black px-6">
+  <h2 class="text-4xl font-black">
+    لسه مش مقتنع؟
+  </h2>
+  <p class="mt-4 opacity-70">
+    Still not convinced? Let’s talk numbers.
+  </p>
+
+  <a href="https://wa.me/201551659001?text=تفاصيل%20اعلانات"
+     target="_blank"
+     class="inline-block mt-10 px-10 py-4 rounded-full bg-green-500 text-black font-black hover:bg-green-400 transition">
+    WhatsApp – 
+  </a>
+</section>
+
+<!-- ================= STYLES ================= -->
+<style>
+.panel { position: relative; }
+.phone {
+  width: 260px;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.phone video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+
+<!-- ================= ANIMATIONS ================= -->
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".panel").forEach(panel => {
+  gsap.from(panel.children, {
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: panel,
+      start: "top 75%",
+    }
+  });
+});
+</script>
+
+</body>
+</html>
